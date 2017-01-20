@@ -3,6 +3,7 @@ package com.rodrigo.main;
 import com.rodrigo.builder.LcdTelevisionBuilder;
 import com.rodrigo.builder.NewTelevisionBuilder;
 import com.rodrigo.builder.OldTelevisionBuilder;
+import com.rodrigo.builder.OldTelevisionBuilderChanning;
 import com.rodrigo.entity.Television;
 import com.rodrigo.generator.TelevisionGenerator;
 
@@ -32,6 +33,16 @@ public class Application {
         Television tv3 = tvg3.getTv();
         System.out.println("The third television has " + tv3.getChannels() + " channels, displays the screen on " +
                             tv3.getScreenDisplayType() + " and is " + tv3.getScreenSize() + " inches big.");
+	
+        System.out.println("==================================================================================================");
+	    
+        System.out.println("Executing with channing methods");
+        
+        OldTelevisionBuilderChanning otb2 = new OldTelevisionBuilderChanning();
+        otb2.buildScreenDisplayType().buildChannels().buildScreenSize();
+        Television tv4 = otb2.getTv();
+        System.out.println("The fouth television has " + tv4.getChannels() + " channels, displays the screen on " +
+                tv4.getScreenDisplayType() + " and is " + tv4.getScreenSize() + " inches big.");
 	}
 
 }
